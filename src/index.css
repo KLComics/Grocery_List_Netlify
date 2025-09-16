@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 22px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  align-items: center;
+  border: 1px solid mediumblue;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  margin: auto;
+  max-width: 500px;
+  width: 100%;
+}
+
+header {
+  align-items: center;
+  background-color: mediumblue;
+  color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.25em;
+  width: 100%;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start;
+  overflow-y: auto;
+  width: 100%;
+}
+
+footer {
+  background-color: mediumblue;
+  color: aliceblue;
+  display: grid;
+  padding: 0.25em;
+  place-content: center;
+  width: 100%;
+}
+
+
+/* SHOPPING LIST */
+
+ul {
+  list-style: none;
+  padding: 0 0.25rem 0.25rem;
+  width: 100%;
+
+  li::before {
+    content: "\200B";
+  }
+}
+
+
+/* ITEM IN LIST */
+
+.item {
+  align-items: center;
+  background-color: #EEE;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.25rem 0;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+
+  &:first-child {
+    margin: 0;
+  }
+
+  input[type="checkbox"] {
+    cursor: pointer;
+    height: 2.5rem;
+    height: 48px;
+    margin-right: 0.5rem;
+    min-height: 48px;
+    min-width: 48px;
+    text-align:center;
+    width: 2.5rem;
+    width: 48px;
+
+    &:focus + label {
+      text-decoration: underline;
+    }
+  }
+
+  & > label {
+    flex-grow: 1;
+    font-size: 0.75rem;
+  }
+
+  svg {
+    color: steelblue;
+    cursor: pointer;
+    font-size: 1rem;
+    height: 36px;
+    min-width: 48px;
+    width: 48px;
+
+    &:focus,
+    &:hover {
+      color: red;
+      outline: none;
+    }
+  }
+}
+
+
+/* ADD ITEM */
+
+.addForm {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.5rem 0 0;
+  padding: 0 0.5rem 0.25rem;
+  width: 100%;
+
+  label {
+    left: -99999px;
+    position: absolute;
+  }
+
+  input[type="text"] {
+    border-radius: 0.25rem;
+    flex-grow: 1;
+    font-size: 1rem;
+    margin-right: 0.25rem;
+    max-width: calc(100% - 50px);
+    min-height: 48px;
+    outline: none;
+    padding: 0.25rem;
+  }
+}
+
+button {
+  background-color: aliceblue;
+  border-radius: 0.25rem;
+  color: mediumblue;
+  cursor: pointer;
+  font-size: 1rem;
+  height: 48px;
+  min-width: 48px;
+  padding: 0.5rem;
+
+  &:focus,
+  &:hover {
+    background-color: limegreen;
+    color: white;
+    outline: none;
+  }
+}
+
+
+/* SEARCH ITEM */
+
+.searchForm {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.25rem 0 0;
+  padding: 0 0.5rem 0.25rem;
+  width: 100%;
+
+  label {
+    left: -99999px;
+    position: absolute;
+  }
+
+  input[type="text"] {
+    border-radius: 0.25rem;
+    flex-grow: 1;
+    font-size: 1rem;
+    margin-right: 0.25rem;
+    max-width: 100%;
+    min-height: 48px;
+    outline: none;
+    padding: 0.25rem;
+  }
+}
